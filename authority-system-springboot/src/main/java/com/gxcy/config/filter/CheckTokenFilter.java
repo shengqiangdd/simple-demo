@@ -66,10 +66,10 @@ public class CheckTokenFilter extends OncePerRequestFilter {
                 this.validateToken(request);
             }
         } catch (AuthenticationException e) {
-            loginFailureHandler.onAuthenticationFailure(request,response,e);
+            return;// Stop execution here to prevent further processing
         }
-        //登录请求不需要验证token
-        doFilter(request,response,filterChain);
+        // Continue with the filter chain
+        filterChain.doFilter(request,response);
     }
 
     /**
