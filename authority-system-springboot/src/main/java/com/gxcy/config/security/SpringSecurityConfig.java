@@ -64,7 +64,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        String[] paths = {"/css/**", "/js/**", "/img/**", "/swagger-ui.html",
+        String[] paths = {"/css/**", "/js/**", "/images/**", "/swagger-ui.html",
                 "/index.html", "favicon.ico", "/doc.html", "/webjars/**",
                 "/swagger-resources/**", "/v2/api-docs/**", "/ws/**"};
         //登录前进行过滤
